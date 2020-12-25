@@ -1,0 +1,139 @@
+from tkinter import * #Import basic functions, classes and methods from UI management purposes
+
+#*--------------------
+
+#Suppliers variables
+var supp1_name = ""
+var location_supp1 = ""
+var supp1_product1 = {"Wine 1", 3}
+var supp1_product2 = {"Wine 2", 3}
+var supp1_product1 = {"Wine 3", 3}
+
+var supp1_transp_cost_money = 2
+var supp1_transp_cost_co2 = 2
+
+
+
+var supp1_name = ""
+var location_supp1 = ""
+var supp1_product1 = {"Wine 1", 3}
+var supp1_product2 = {"Wine 2", 3}
+var supp1_product1 = {"Wine 3", 3}
+
+var supp1_transp_cost_money = 2
+var supp1_transp_cost_co2 = 2
+
+
+
+var supp1_name = ""
+var location_supp1 = ""
+var supp1_product1 = {"Wine 1", 3}
+var supp1_product2 = {"Wine 2", 3}
+var supp1_product1 = {"Wine 3", 3}
+
+var supp1_transp_cost_money = 2
+var supp1_transp_cost_co2 = 2
+
+
+
+#Customers variables
+var cust1_name = ""
+var cust1_location = ""
+var cust1_delivery_money_cost_for1unit = 1
+var cust1_delivery_co2_cost = 1
+
+#Company variables
+var time_in_zaiko_for1unit = 1
+var co2_for_zaiko_for1unit = 1
+var charges = 1
+var selling_price = 3
+var comp_benef = 1
+
+#Government variables
+var time_in_cust_per_hour = 1
+var co2_per_hour = 1
+var co2_emit_in_cust_per_hour = time_in_cust_per_hour * co2_per_hour
+var tax = "1"
+
+
+#Output Variables
+var Sales_revenues = selling_price * int(entry_2.get())#Quantity
+var Company_Benefit = Sales_revenues - (tax + charges)
+var Inventory_cost = (time_in_zaiko_for1unit * cost_time_in_zaiko_for1unit) * int(entry_2.get())#Quantity Time Flow rate
+var Gov_Benefit = tax
+var Co2_emitted_for_order = supp1_transp_cost_co2 + co2_emit_in_cust + cust1_dev_co2_cost
+var Clients_delivered = ()
+
+#*--------------------
+
+root = Tk() #Create a basic window for the program
+
+#*--------------------
+
+#User Interface design
+
+label_1 = Label(root, text="Product") #Creates a label on the root, assigning a text to it
+label_2 = Label(root, text="Quantity")
+label_3 = Label(root, text="Shipping_type")
+label_4 = Label(root, text="Time(flow_time)")
+label_5 = Label(root, text="Customer_to_be_delivered")
+label_10 = Label(root, text="Add_product_in_system")
+label_11 = Label(root, text="Remove_product_in_system")
+entry_1 = Entry(root) #Creates an entry for user on the root
+entry_2 = Entry(root)
+entry_3 = Entry(root) 
+entry_4 = Entry(root)
+entry_5 = Entry(root)
+entry_10 = Entry(root)
+entry_11 = Entry(root)
+button1 = Button(root, text="Confirm", fg="black") #Creates button on root, assign text and text color
+
+#Functions (buttons)
+
+def process_results():
+#	tkMessageBox.showinfo("Hello Python", "Company_Benefit")
+	print("Sales_revenues", "Company_Benefit", "Inventory_cost", "Gov_Benefit", "Co2_emited_for_order")
+
+#Entries 
+
+label_1.grid(row=0, sticky=E) #Gives position to label_1 
+label_2.grid(row=1, sticky=E)
+label_3.grid(row=2, sticky=E) 
+label_4.grid(row=3, sticky=E)
+label_5.grid(row=4, sticky=E)
+label_10.grid(row=7, sticky=E)
+label_11.grid(row=8, sticky=E)
+
+entry_1.grid(row=0, column=1) #Gives position to entry_1 
+entry_2.grid(row=1, column=1)
+entry_3.grid(row=2, column=1) 
+entry_4.grid(row=3, column=1)
+entry_5.grid(row=4, column=1)
+entry_10.grid(row=7, column=1)
+entry_11.grid(row=8, column=1)
+
+button1.pack(side="BOTTOM") #Gives area position to button
+button1.grid(row=5, column=1) #Gives precise position to button
+
+#*--------------------
+
+#Mouse functions in UI
+
+def leftClick(event):
+	print("Left")
+	
+def middleClick(event):
+	print("Middle")
+	
+def rightClick(event):
+	print("Right")
+	
+frame = Frame(root, width=300, height=250)
+frame.bind("<Button-1>", leftClick)
+frame.bind("<Button-2>", middleClick)
+frame.bind("<Button-3>", rightClick)
+frame.pack()
+
+#*--------------------
+
+root.mainloop() #Loop the frames to keep the program running
